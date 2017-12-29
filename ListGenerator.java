@@ -1,4 +1,8 @@
 import java.sql.*;
+
+/**
+*This class generates a list of instructor names for use in other generators
+*/
 public class ListGenerator {
     static String name = "";
     static String password = "";
