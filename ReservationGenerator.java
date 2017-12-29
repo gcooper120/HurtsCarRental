@@ -4,6 +4,10 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.time.*;
 import java.util.concurrent.ThreadLocalRandom;
+
+/**
+*Generates reservations for the database
+*/
 public class ReservationGenerator
 {
     //Password Data
@@ -26,6 +30,7 @@ public class ReservationGenerator
              Connection con=DriverManager.getConnection("jdbc:oracle:thin:@edgar0.cse.lehigh.edu:1521:cse241", name, password);
              )
             {
+                //Necessary variables and sql stuff
                 LocalDate earlier, later;
                 long daysToAdd;
                 int res_id, clas, pickup, dropoff, fuel, ins;
@@ -45,7 +50,7 @@ public class ReservationGenerator
                         listLocations.add(resultLocations.getString(1));
 
                     }
-
+                //Generates random values for some of the values and then adds to the DB
                 for (int i = 0; i < 200; i++)
                     {
                         prepInsert = con.prepareStatement(insertRow);
