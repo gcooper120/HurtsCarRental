@@ -2,6 +2,9 @@ import java.sql.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+/**
+*This class is used to populate the rents table in the database
+*/
 public class RentsGenerator
 {
     //Password Data
@@ -18,6 +21,7 @@ public class RentsGenerator
              Connection con=DriverManager.getConnection("jdbc:oracle:thin:@edgar0.cse.lehigh.edu:1521:cse241",name,password);
              Statement s=con.createStatement();
              ) {
+        //Generates lists of licenses and res_ids
         List<String> listCustomer = new ArrayList<String>(200);
         List<Integer> listReservations = new ArrayList<Integer>(200);
         String qCustomer = "select License from Customer";
@@ -32,6 +36,7 @@ public class RentsGenerator
             {
                 listReservations.add(result.getInt(1));
             }
+        //Assigns reservations to specific customers
         int numReservations = listReservations.size();
         int numCustomers = listCustomer.size();
         int resid;
