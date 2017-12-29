@@ -5,8 +5,8 @@ import java.util.*;
 public class ReservesGenerator
 {
     //Password Data
-    static String name = "gcc219";
-    static String password = "gct123!";
+    static String name = "";
+    static String password = "";
     //Main Method
     public static void main(String[] args)
     {

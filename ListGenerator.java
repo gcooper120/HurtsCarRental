@@ -1,7 +1,7 @@
 import java.sql.*;
 public class ListGenerator {
-    static String name = "gcc219";
-    static String password = "gct123!";
+    static String name = "";
+    static String password = "";
   public static void main(String[] args) {
     try {
       Class.forName ("oracle.jdbc.driver.OracleDriver");

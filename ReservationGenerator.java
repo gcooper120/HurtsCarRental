@@ -7,8 +7,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ReservationGenerator
 {
     //Password Data
-    static String name = "gcc219";
-    static String password = "gct123!";
+    static String name = "";
+    static String password = "";
     //Main Method
     public static void main(String[] args)
     {
