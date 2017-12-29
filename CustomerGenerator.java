@@ -4,6 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.*;
+
+/**
+*This class is used to generate customers for the database
+*Takes 4 file arguments, name list, last name list, city list, street name list
+*/
 public class CustomerGenerator
 {
     //Password Data
@@ -57,16 +62,6 @@ public class CustomerGenerator
                 lastScanner.close();
                 cityScanner.close();
                 streetNameScanner.close();
-
-
-
-
-
-
-
-
-
-
                 //Populating Database
                 try {
                     Class.forName ("oracle.jdbc.driver.OracleDriver");
@@ -94,7 +89,6 @@ public class CustomerGenerator
                                 stateIndex = generator.nextInt(50);
                                 zip = generator.nextInt(89999) + 10001;
                                 q = "insert into Customer Values(" + License + ",'" + firstNames[firstIndex] + "','" + middleNames[middleIndex] + "','" + lastNames[lastIndex] + "'," + streetNumber + ",'" + streetNames[streetNameIndex] + "','" + cityNames[cityIndex] + "','" + stateList[stateIndex] + "'," + zip + ")";
-                                //System.out.println(q);
                                 i = s.executeUpdate(q);
                             }
                     } catch (Exception e){e.printStackTrace();} 
