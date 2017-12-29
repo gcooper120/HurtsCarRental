@@ -2,6 +2,9 @@ import java.sql.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+/**
+*Populates the reserves table for the database
+*/
 public class ReservesGenerator
 {
     //Password Data
@@ -18,6 +21,7 @@ public class ReservesGenerator
              Connection con=DriverManager.getConnection("jdbc:oracle:thin:@edgar0.cse.lehigh.edu:1521:cse241",name,password);
              Statement s=con.createStatement();
              ) {
+        //Populates lists for car_id and res_id
         List<Integer> listCar = new ArrayList<Integer>(200);
         List<Integer> listReservations = new ArrayList<Integer>(150);
         String qCar = "select Car_id from Car";
@@ -39,6 +43,7 @@ public class ReservesGenerator
             + "Reserves(Res_ID, car_ID) "
             + "Values(?,?)";
         PreparedStatement prepInsert = con.prepareStatement(insertRow);
+        //Adds to reserves table
         for (int i = 0; i < numReservations; i++)
             {
                 carid = listCar.get(i);
