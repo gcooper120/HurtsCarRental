@@ -3,6 +3,11 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
+
+/**
+*This class is used to generate a set of cars for the database. There are 5 makes with 3 models each.
+*Each make has 1 car of each class: Standard, luxury and exotic
+*/
 public class CarGenerator
 {
     //Password Data
@@ -15,7 +20,7 @@ public class CarGenerator
         String modelList[] = {"Model S", "Model X", "Model 3", "Fusion", "Mustang","F150", "Cruise", "Camaro", "Corvette", "Camry", "Corolla", "RAV4", "325i", "X5", "i8", "S-Class", "GLE SUV", "C-Class"};
         String classList[] = {"Standard", "Luxury", "Exotic"};
 
-
+        //This code will never be seen outside of testing so I can just print the stack traces.
         try {
             Class.forName ("oracle.jdbc.driver.OracleDriver");
         } catch(Exception e){e.printStackTrace();}    
