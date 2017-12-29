@@ -724,7 +724,7 @@ public class HurtsInterface
         return;
     }
 
-
+    /* This method is used when a customer returns a car */
     public static void returnCar()
     {
         Scanner rcScan = new Scanner(System.in);
@@ -990,6 +990,7 @@ public class HurtsInterface
  
         return;
     }
+    /*This method allows us to apply discounts to customers that qualify for them */
     public static void applyDiscount()
     {
         Scanner adScan = new Scanner(System.in);
@@ -1092,6 +1093,7 @@ public class HurtsInterface
         return;
     }
 
+    /*This method adds a car to the database */
     public static void addCar()
     {
         Scanner acScan = new Scanner(System.in);
